@@ -38,11 +38,15 @@
         </div>
         
         <div class="add-btn-wrapper">
-        	<button id="add-btn" onclick="addNewUserInputField();">PLUS</button>
+        	<button id="add-btn" onclick="addUserToFile()">PLUS</button>
         </div>
         
         <div class="add-btn-wrapper">
-        	<button id="submit" onclick="sendJsonToEmailService();">SCHICK</button>
+        	<button id="submit" onclick="addUserToFile">SCHICK</button>
+        </div>
+
+        <div class="add-btn-wrapper">
+        	<button id="amk" onclick="amk()">asdasdasdsa</button>
         </div>
         
         

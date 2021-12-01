@@ -1,22 +1,24 @@
-var userJson = '[ { "name":"phil", "email": "phil.limbeck@gmail.com" }, { "name":"nikolai", "email": "nikolai.atanasoski@gmail.com" } ]';
-	console.log(userJson);
+
+const addUserToFile = () => {
+	const newUser = {};
+	newUser.name = $('#name').val();
+	newUser.email = $('#email').val();
+
+	const urlParams = new URLSearchParams(window.location.search);
+	newUser.team = urlParams.get('team');
 	
-	function sendJsonToEmailService(){
-		
-		$.ajax({
-		 type: "POST",
-		 url: 'emailsSent.php',
-		 data: userJson,
-		 success: function(data){
-		 	console.log(data);
-		 },
-		 error: function(xhr, status, error){
-		 	console.error(xhr);
-		 }
-		});
-		
-	}
-	
-	function addNewUserInputField(){
-		console.log("x");
-	}
+	const newUserJson = JSON.stringify(newUser);
+	console.log("stringify: " + newUserJson);
+
+	$.ajax({
+		type: "POST",
+		url: 'add-santa.php',
+		data: newUserJson,
+		success: function (data) {
+			console.log(data);
+		},
+		error: function (xhr, status, error) {
+			console.error(xhr);
+		}
+	});
+}
