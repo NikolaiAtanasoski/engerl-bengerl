@@ -6,57 +6,66 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Engerl Bengerl</title>
-    <meta name="author" content="Nikolai Atanasoski">
+    <title>Secret Santa | Nikolai loves X-Mas</title>
+    <meta name="author" content="Nikolai Atanasoski + Philipp Limbeck">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
-    <link rel="stylesheet" href="engerl-bengerl.css">
+	<!-- CUSTOM STYLESHEET -->
+    <link rel="stylesheet" href="assets/css/engerl-bengerl.css">
+    
+    <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     
 </head>
 
-
-
 <body>
 	
+	<?php
+	$teamname = '';
+		if(isset($_GET['team']) && !empty($_GET['team'])){
+		    $teamname = $_GET['team'];
+		} else {
+		    $teamname = "YOU BELONG TO NO TEAM - GET SOME FRIENDS!";
+		}
+	?>
+	
     <div class="names-input-container">
+    	<h1>Secret Santa</h1>
+    	
         <div class="text-input">
-            <p>Teamname: </p>
-            <input type="text" id="team" placeholder="santas kids" />
+            <div class="input-label">Teamname: </div>
+            <div class="teamname"><?php echo $teamname; ?></div>
         </div>
        
         <div class="text-input input-wrapper-name">
-            <p>Your Name: </p>
+            <div class="input-label">Your Name: </div>
             <input class="text-input" type="text" id="name" placeholder="your name" />
         </div>
         
         <div class="text-input input-wrapper-email">
-            <p>Your Email: </p>
+            <div class="input-label">Your Email: </div>
             <input class="text-input" type="email" id="email" placeholder="your email" />
         </div>
         
         <div class="add-btn-wrapper">
-        	<button id="add-btn" onclick="addUserToFile()">PLUS</button>
+        	<button id="add-btn" onclick="">add me to team</button>
         </div>
         
+        <!-- 
         <div class="add-btn-wrapper">
-        	<button id="submit" onclick="addUserToFile">SCHICK</button>
+        	<button id="submit" onclick="sendJsonToEmailService();">SCHICK</button>
         </div>
+        -->
 
-        <div class="add-btn-wrapper">
-        	<button id="amk" onclick="amk()">asdasdasdsa</button>
-        </div>
-        
-        
-        
     </div>
     
     
-
-
-	<!-- MOTHERFUCKING CHRISTMAS TREE -->
+	<!-- CHRISTMAS TREE -->
     <div class="container">
         <div class="tree">
         </div>
@@ -103,7 +112,45 @@
         <div class="trunk"></div>
         <div class="floor"></div>
     </div>
-    <script src="engerl-bengerl.js"></script>
+    
+    
+    <!-- SNOWFLAKES -->
+    
+	<div class="snowflakes" aria-hidden="true">
+	  <div class="snowflake">
+	  ❅
+	  </div>
+	  <div class="snowflake">
+	  ❅
+	  </div>
+	  <div class="snowflake">
+	  ❆
+	  </div>
+	  <div class="snowflake">
+	  ❄
+	  </div>
+	  <div class="snowflake">
+	  ❅
+	  </div>
+	  <div class="snowflake">
+	  ❆
+	  </div>
+	  <div class="snowflake">
+	  ❄
+	  </div>
+	  <div class="snowflake">
+	  ❅
+	  </div>
+	  <div class="snowflake">
+	  ❆
+	  </div>
+	  <div class="snowflake">
+	  ❄
+	  </div>
+	</div>
+	
+	<!-- CUSTOM JS -->
+    <script src="assets/js/engerl-bengerl.js"></script>
 </body>
 
 </html>
