@@ -94,6 +94,11 @@ input[type=text]{
 	cursor: pointer;
 }
 
+.finished-wrapper div{
+  padding-top: 20px;
+  color: orange;
+}
+
 
   /* T R E E  */
   .container {

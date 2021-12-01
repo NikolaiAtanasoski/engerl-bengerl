@@ -15,9 +15,11 @@ const addUserToFile = () => {
 		data: newUserJson,
 		success: function (data) {
 			console.log(data);
+			$('#submitMessage').text("Successfully added!");
 		},
 		error: function (xhr, status, error) {
 			console.error(xhr);
+			$('#submitMessage').text("Something went wrong");
 		}
 	});
 }

@@ -53,14 +53,12 @@
         </div>
         
         <div class="add-btn-wrapper">
-        	<button id="add-btn" onclick="">add me to team</button>
+        	<button id="add-btn" onclick="addUserToFile();">add me to team</button>
         </div>
-        
-        <!-- 
-        <div class="add-btn-wrapper">
-        	<button id="submit" onclick="sendJsonToEmailService();">SCHICK</button>
-        </div>
-        -->
+
+        <div class="finished-wrapper">
+            <div id="submitMessage"></div>
+        </div>    
 
     </div>
     
